@@ -14,7 +14,7 @@
 								<a href="#"><i class="fe fe-layout"></i> <span>Portfolio</span> <span class="menu-arrow"></span></a>
 								<ul style="display: none;">
 									<li><a href="error-404.html">Portfolio </a></li>
-									<li><a href="error-500.html">Category </a></li>
+									<li><a href="{{ route('portfolio-category.index')}}">Category </a></li>
 								</ul>
 							</li>
 						</ul>
