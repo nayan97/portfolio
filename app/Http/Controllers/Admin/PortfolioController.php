@@ -98,6 +98,8 @@ class PortfolioController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $delete_data = Portfolio::findOrFail($id);
+        $delete_data -> delete();
+        return back() ->with('success', 'Category deleted successfuly');
     }
 }

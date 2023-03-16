@@ -17,7 +17,6 @@
                                 <th>#</th>
                                 <th>Name</th>
                                 <th>Slug</th>
-                                <th>Portfolios</th>
                                 <th>Created At</th>
                                 <th>Status</th>
                                 <th>Action</th>
@@ -30,8 +29,6 @@
                                 <td>{{ $loop -> index + 1 }}</td>
                                 <td>{{ $item -> name }}</td>
                                 <td>{{ $item -> slug }}</td>
-                                <td>
-                                </td>
                                 <td>{{ $item -> created_at -> diffforhumans() }}</td>
                                 <td>
                                     @if($item -> status )
@@ -43,11 +40,14 @@
                                     @endif    
                                 </td>
                                 <td>
-                                    <a class="btn btn-sm btn-warning" href="#"><i class="fa fa-edit"></i></a>
-                                    
-                                    <a href="#" class="btn btn-sm btn-danger"><i class="fa fa-trash"></i></a>
-
-                                </td>
+                                        {{-- <a class="btn btn-sm btn-info" href="#"><i class="fa fa-eye"></i></a> --}}
+                                        <a class="btn btn-sm btn-warning" href="#"><i class="fa fa-edit"></i></a>
+                                        <form action="{{ route('portfolio-category.destroy', $item -> id ) }}" class="d-inline delete-form" method="POST">
+                                            @csrf
+                                            @method('DELETE')
+                                            <button class="btn btn-sm btn-danger" type="submit"><i class="fa fa-trash"></i></button>
+                                        </form>
+                                    </td>
                               </tr>
                           @endforeach                           
                             

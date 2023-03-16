@@ -6,7 +6,7 @@
 								<span>Main</span>
 							</li>
 							<li class="active"> 
-								<a href="{{ url('/')}}"><i class="fe fe-home"></i> <span>Dashboard</span></a>
+								<a href="{{ url('dashboard')}}"><i class="fe fe-home"></i> <span>Dashboard</span></a>
 							</li>
 							
 						

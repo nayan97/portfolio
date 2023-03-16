@@ -90,6 +90,19 @@
 		<script  src="{{ asset ('admin/assets/ckeditor/ckeditor.js')}}"></script>
 		<script  src="{{ asset ('admin/assets/js/script.js')}}"></script>
 		<script  src="{{ asset('custom/admin.js') }}"></script>
+
+		<script>
+
+  		$('#slider-photo').change(function(e){
+
+			const photo_url = URL.createObjectURL(e.target.files[0]);
+			$('img#product_image_load').attr('src', photo_url);
+
+
+
+		});
+
+</script>
 		
 	
 

@@ -18,7 +18,7 @@
                     </div>
                 </div>
                 <div class="dash-widget-info">
-                    <h6 class="text-muted">Doctors</h6>
+                    <h6 class="text-muted">Client</h6>
                     <div class="progress progress-sm">
                         <div class="progress-bar bg-primary w-50"></div>
                     </div>
@@ -39,7 +39,7 @@
                 </div>
                 <div class="dash-widget-info">
                     
-                    <h6 class="text-muted">Patients</h6>
+                    <h6 class="text-muted">Completed Project</h6>
                     <div class="progress progress-sm">
                         <div class="progress-bar bg-success w-50"></div>
                     </div>
@@ -55,12 +55,12 @@
                         <i class="fe fe-money"></i>
                     </span>
                     <div class="dash-count">
-                        <h3>485</h3>
+                        <h3>120</h3>
                     </div>
                 </div>
                 <div class="dash-widget-info">
                     
-                    <h6 class="text-muted">Appointment</h6>
+                    <h6 class="text-muted">Work in Progress</h6>
                     <div class="progress progress-sm">
                         <div class="progress-bar bg-danger w-50"></div>
                     </div>

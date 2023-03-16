@@ -1,8 +1,9 @@
 @php 
 
   $categories = App\Models\Category::all();
-  $portfolios = App\Models\Portfolio::where('status', true) -> take(8) -> get();
+  $portfolios = App\Models\Portfolio::where('status', true) -> paginate(6);
 @endphp 
+
 
 <section class="portfolio overflow-hidden">
 	<div class="container">
@@ -23,6 +24,7 @@
                         </li>
                     @endforeach
 				
+				
 				</ul>
 			</div>
 		</div>
@@ -31,11 +33,14 @@
             @foreach ($portfolios as $data )
                 <div class="grid-item col-lg-4 col-sm-6 @foreach ($data -> category as $cats ) {{ $cats -> slug }}@endforeach">
                     <a href="#!" class="portfolio__card position-relative d-inline-block w-100">
-                        <img src="{{ url('img/' . $data -> featured ) }}" alt="Random Image" class="w-100">
+                        <img  style="width:100%; height:400px"; src="{{ url('img/' . $data -> featured ) }}" alt="Random Image" class="w-100">
                     </a>
                 </div>
             @endforeach
 			
+		</div>
+		<div>
+					 {{ $portfolios->links('pagination::bootstrap-4') }} 
 		</div>
 	</div>
 </section>

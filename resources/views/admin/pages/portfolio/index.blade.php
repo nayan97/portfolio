@@ -31,7 +31,7 @@
                                     <td>{{ $item -> title }}</td>
                                     <td><img style="width:60px;height:60px;object-fit:cover;" src="{{ url('img/' . $item -> featured ) }}" alt=""></td>
                                     <td>
-                                        <ul class="comet-list">
+                                        <ul style="list-style:none;" class="comet-list">
                                             @foreach( $item -> category as $cat )
                                                 <li> <i class="fa fa-angle-right"></i> {{ $cat -> name }}</li>
                                             @endforeach
@@ -48,10 +48,13 @@
                                         @endif    
                                     </td>
                                     <td>
+                                        {{-- <a class="btn btn-sm btn-info" href="#"><i class="fa fa-eye"></i></a> --}}
                                         <a class="btn btn-sm btn-warning" href="#"><i class="fa fa-edit"></i></a>
-                                        
-                                        <a href="#" class="btn btn-sm btn-danger"><i class="fa fa-trash"></i></a>
-
+                                        <form action="{{ route('portfolio.destroy', $item -> id ) }}" class="d-inline delete-form" method="POST">
+                                            @csrf
+                                            @method('DELETE')
+                                            <button class="btn btn-sm btn-danger" type="submit"><i class="fa fa-trash"></i></button>
+                                        </form>
                                     </td>
                                 </tr>
                             @empty
@@ -91,11 +94,13 @@
                         <label for="slider-photo">
                             <img style="width:100px; cursor:pointer;" src="https://icon-library.com/images/image-icon/image-icon-2.jpg" alt="">
                         </label>
+                        <img style="max-width:50%;display:block"id="product_image_load"
+                                                            src="" alt="">
                     </div>
                     <hr>
                     <div class="form-group">
-                        <label>Select Categories</label>                        
-                        <ul class="comet-list">
+                        <label>Select One Categories</label>                        
+                        <ul style="list-style:none" class="comet-list">
                             @foreach ($categories as $cat)
                                 <li> 
                                     <label><input name="cat[]" value="{{ $cat -> id }}" type="checkbox"> {{ $cat -> name }}</label> 
