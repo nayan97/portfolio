@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\FrontendPageController;
+use App\Http\Controllers\Admin\PortfolioController;
 use App\Http\Controllers\Admin\PortfolioCategoryController;
 
 Route::get('/dashboard', function(){
@@ -9,6 +10,8 @@ Route::get('/dashboard', function(){
 });
 
 Route::resource('/portfolio-category', PortfolioCategoryController::class);
+Route::resource('/portfolio', PortfolioController::class);
+
 
 
 //** Frontend Routes**/

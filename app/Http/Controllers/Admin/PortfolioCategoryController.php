@@ -3,7 +3,6 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Models\Category;
-use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -36,18 +35,7 @@ class PortfolioCategoryController extends Controller
      */
     public function store(Request $request)
     {
-                // validate
-                $this -> validate($request, [
-                    'name'      => 'required|unique:categories'
-                ]); 
-        
-                // store 
-                Category::create([
-                    'name'      => $request -> name,
-                    'slug'      => Str::slug($request -> name)
-                ]);
-                // return 
-                return back() -> with('success' , 'Category Added successful');
+        //
     }
 
     /**

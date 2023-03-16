@@ -13,7 +13,7 @@
 							<li class="submenu">
 								<a href="#"><i class="fe fe-layout"></i> <span>Portfolio</span> <span class="menu-arrow"></span></a>
 								<ul style="display: none;">
-									<li><a href="error-404.html">Portfolio </a></li>
+									<li><a href="{{ route('portfolio.index')}}">Portfolio </a></li>
 									<li><a href="{{ route('portfolio-category.index')}}">Category </a></li>
 								</ul>
 							</li>
